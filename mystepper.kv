@@ -1,0 +1,44 @@
+<MainScreen>:
+    name: 'mystepper'
+    turn_on_off_button: turn_on_off_button
+    slideeer: slideeer
+
+    FloatLayout:
+        size_hint: None, None
+
+    Slider:
+        id: slideeer
+        min: 0
+        max: 100
+        step: 0.0001
+        orientation: 'horizontal'
+        sensitivity: 'handle'
+        on_value: root.slideeer_action()
+
+    DPEAButton:
+        #id: direction_changer_button
+        text: 'Dir'
+        size: 200, 200
+        x: root.width * 0.75
+        y: root.height * 0.05
+        color: .8, 0, .5, 1
+        on_press: root.direction_changer()
+
+    DPEAButton:
+        id: turn_on_off_button
+        text: 'On'
+        size: 200, 200
+        x: root.width * 0.25
+        y: root.height * 0.05
+        color: .8, 0, .5, 1
+        on_press: root.turn_on_off()
+
+
+    #DPEAButton:
+    #    #id: fun_button
+    #    text: 'Fun'
+    #    size: 200, 200
+    #    x: root.width * 0.5
+    #    y: root.height * 0.05
+    #    color: .8, 0, .5, 1
+    #    on_press: root.fun()
