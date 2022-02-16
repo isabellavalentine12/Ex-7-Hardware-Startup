@@ -223,12 +223,12 @@ while True:
     if (cyprus.read_gpio() & 0b0010) == 0b0010:
         sleep(1)
         print("GPIO on port P7 is HIGH")
-        cyprus.set_pwm_values(2, period_value=100000, compare_value=100000, compare_mode=cyprus.LESS_THAN_OR_EQUAL)
+        cyprus.set_pwm_values(2, period_value=100000, compare_value=0, compare_mode=cyprus.LESS_THAN_OR_EQUAL)
         sleep(1)
     elif (cyprus.read_gpio() & 0b0010) == 0b0000:
         sleep(1)
         print("GPIO on port P7 is LOW")
-        cyprus.set_pwm_values(2, period_value=100000, compare_value=0, compare_mode=cyprus.LESS_THAN_OR_EQUAL)
+        cyprus.set_pwm_values(2, period_value=100000, compare_value=100000, compare_mode=cyprus.LESS_THAN_OR_EQUAL)
         sleep(1)
     else:
         sleep(1)
